@@ -1,0 +1,36 @@
+.body{
+  /*background-color: lightgrey;*/
+  padding: 100px;
+  /*border: 1px solid red;*/
+}
+.form-container{
+  width: 900px;
+  height:700px;
+  background-color: #D5E0E8;
+  border: none;
+  border-radius: 10px;
+  padding: 40px 40px 40px 80px;
+  margin: auto;
+
+  /*border: 1px solid red;*/
+
+}
+
+.next-btn{
+  height: 50px;
+  width: 110px;
+  background-color: #000C1F;
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.button-container{
+  /*border: 1px solid red;*/
+  width: 650px;
+  text-align: end;
+  margin-top: 50px;
+}
+

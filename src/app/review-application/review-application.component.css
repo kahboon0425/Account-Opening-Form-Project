@@ -1,0 +1,90 @@
+.body{
+  /*background-color: lightgrey;*/
+  padding: 100px;
+  /*border: 1px solid red;*/
+}
+.form-container{
+  width: 900px;
+  height:1400px;
+  background-color: #D5E0E8;
+  border: none;
+  border-radius: 10px;
+  padding: 40px;
+  margin: auto;
+
+  /*border: 1px solid red;*/
+
+}
+
+.title-container{
+  text-align: center;
+  /*border: 1px solid red;*/
+  padding: 0 60px 0 60px;
+  margin-bottom: 50px;
+}
+
+
+/*.inputField{*/
+/*  width: 500px;*/
+/*  height: 50px;*/
+/*  text-align: left;*/
+/*}*/
+
+.question{
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.question-container{
+  width: 200px;
+  /*border: 1px solid red;*/
+  padding-top: 10px;
+
+}
+
+.big-title{
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.input-field-group-container{
+  margin: auto;
+  width: 500px;
+  /*border: 1px solid red;*/
+
+}
+
+.input-field-container{
+  margin-bottom: 10px;
+  margin-top: 10px;
+  display: flex;
+}
+
+.button-container{
+  /*margin: auto;*/
+  /*width: 300px;*/
+  /*border: 1px solid red;*/
+  margin-top: 20px;
+  text-align: end;
+}
+
+.next-btn{
+  height: 50px;
+  width: 110px;
+  background-color: #000C1F;
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.next-btn:hover{
+  opacity: .8;
+}
+
+.userInput{
+  margin-left: 10px;
+}
+
+

@@ -1,0 +1,87 @@
+
+<div class="body">
+
+  <div class="form-container">
+    <app-steps></app-steps>
+    <div class="title-container">
+      <h1>Personal Details</h1>
+      <h3>To get started, tell us about yourself</h3>
+
+    </div>
+
+    <div class="input-field-group-container">
+      <!--      <p>{{ ((form$| async) | json) }}</p>-->
+      <!--      <p>{{ (form$ | async)?.email }}</p>-->
+
+      <h5>Contact Information</h5>
+      <div class="form-group">
+        <input class="form-control email-input-field-container" value=" {{ (form$ | async)?.email }}" [disabled]="true">
+      </div>
+
+      <form [formGroup]="personalDetails" (ngSubmit)="onSubmit()" [ngxsForm]="NGXS_FORM_NAME">
+        <div class="form-group-display">
+          <div>
+            <p class="field-title">Country Code</p>
+            <nz-select formControlName="countryCode">
+              <nz-option *ngFor="let c of countryCodeData" [nzValue]="c" [nzLabel]="c"></nz-option>
+            </nz-select>
+          </div>
+
+          <div class="phone-input-field-container">
+            <p class="field-title">Phone Number</p>
+            <input class="phone-no-input" formControlName="phoneNumber">
+            <div *ngIf="phoneNumber.invalid && phoneNumber.touched || isClick">
+              <small *ngIf="phoneNumber.errors?.required" class="text-danger">phone number is required field</small>
+            </div>
+          </div>
+        </div>
+
+        <hr/>
+        <h5>Personal Information</h5>
+        <div class="form-group-display">
+          <div class="form-group input-field-container">
+            <input class="form-control inputField" placeholder="First Name" formControlName="firstName">
+            <div *ngIf="firstName.invalid && firstName.touched">
+              <small *ngIf="firstName.errors?.required" class="text-danger">first name is required field</small>
+            </div>
+          </div>
+          <div class="form-group input-field-container">
+            <input class="form-control inputField" placeholder="Last Name" formControlName="lastName">
+            <div *ngIf="lastName.invalid && lastName.touched">
+              <small *ngIf="lastName.errors?.required" class="text-danger">last name is required field</small>
+            </div>
+          </div>
+        </div>
+<!--        <hr/>-->
+        <div class="form-group-display">
+          <div>
+            <p class="field-title">Gender</p>
+            <nz-select formControlName="gender">
+              <nz-option *ngFor="let c of genderData" [nzValue]="c" [nzLabel]="c"></nz-option>
+            </nz-select>
+          </div>
+          <div>
+            <p class="field-title">Nationality</p>
+            <nz-select formControlName="nationality">
+              <nz-option *ngFor="let c of nationalityData" [nzValue]="c" [nzLabel]="c"></nz-option>
+            </nz-select>
+          </div>
+          <div class="date-of-birth-layout">
+            <p class="date-of-birth-title">Date Of Birth:</p>
+            <nz-space>
+              <nz-date-picker formControlName="dateOfBirth" nzPlaceHolder="Select Date" *nzSpaceItem [nzMode]="mode"></nz-date-picker>
+            </nz-space>
+          </div>
+        </div>
+
+        <div class="button-container">
+<!--          <button routerLink="/financial-details" type=submit class="next-btn" nz-button nzType="primary">Next</button>-->
+          <button routerLink="/financial-details" (click)= "onClickNextButton()" [disabled]="!personalDetails.valid" class="next-btn" type=submit nz-button nzType="primary">Next</button>
+
+        </div>
+
+
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,130 @@
+.body{
+  /*background-color: lightgrey;*/
+  padding: 100px;
+  /*border: 1px solid red;*/
+}
+.form-container{
+  width: 900px;
+  height:800px;
+  background-color:  #D5E0E8;
+  border: none;
+  border-radius: 10px;
+  padding: 40px;
+  margin: auto;
+
+  /*border: 1px solid red;*/
+
+}
+
+.title-container{
+  text-align: center;
+  /*border: 1px solid red;*/
+  padding: 0 60px 0 60px;
+  margin-bottom: 70px;
+  margin-top:10px;
+}
+
+
+.inputField{
+  width: 320px;
+  height: 50px;
+  text-align: left;
+
+}
+
+.phone-no-input{
+  width: 250px;
+  height: 30px;
+  border:none;
+}
+
+
+.input-field-group-container{
+  margin-left: 60px;
+  width: 500px;
+
+  /*border: 1px solid red;*/
+
+}
+
+.input-field-container{
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 300px;
+  margin-right: 30px;
+  /*border: 1px solid red;*/
+}
+
+.email-input-field-container{
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 300px;
+  /*border: 1px solid red;*/
+}
+
+.phone-input-field-container{
+  margin-bottom: 10px;
+  width: 300px;
+  /*border: 1px solid red;*/
+}
+
+email-field-container{
+  height: 50px;
+  text-align: left;
+}
+
+.button-container{
+  /*border: 1px solid red;*/
+  width: 650px;
+  text-align: end;
+  margin-top: 50px;
+}
+
+.next-btn{
+  height: 50px;
+  width: 650px;
+  background-color: #000C1F;
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.next-btn:hover{
+  opacity: .8;
+}
+
+.field-title{
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+.date-of-birth-title{
+  font-size: 15px;
+  margin-right: 10px;
+}
+
+nz-select {
+  margin-right: 8px;
+  width: 180px;
+}
+
+.form-group-display{
+  margin-top: 10px;
+  display: flex;
+  /*border: 1px solid red;*/
+  width: 700px;
+  /*height: 500px;*/
+}
+
+.date-of-birth-layout{
+  display: flex;
+  margin: 11px 0 0 20px;
+
+}
+
+input.ng-invalid.ng-touched{
+  border: 1px solid red;
+}
+

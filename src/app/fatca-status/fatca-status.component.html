@@ -1,0 +1,35 @@
+<div class="body">
+  <div class="form-container">
+    <app-steps></app-steps>
+    <br/>
+    <br/>
+    <br/>
+    <h1>FATCA Status</h1>
+    <h3>Do you possess any of the following U.S. indicia?</h3>
+    <br/>
+    <br/>
+    <form [formGroup]="fatcaStatus"  [ngxsForm]="NGXS_FORM_NAME">
+      <div>
+        <p>US citizenship/tax residency (e.g. US passport/Green Card holder, U.S. taxpayer, etc.</p>
+        <nz-switch formControlName="USCitizenship" [ngModel]="false" nzCheckedChildren="Yes" nzUnCheckedChildren="No"></nz-switch>
+      </div>
+      <br/>
+      <div>
+        <p>US place of birth</p>
+        <nz-switch formControlName="USBirthPlace" [ngModel]="false" nzCheckedChildren="Yes" nzUnCheckedChildren="No"></nz-switch>
+      </div>
+      <br/>
+      <div>
+        <p>US telephone number</p>
+        <nz-switch formControlName="USPhoneNo" [ngModel]="false" nzCheckedChildren="Yes" nzUnCheckedChildren="No"></nz-switch>
+      </div>
+
+      <div class="button-container">
+        <!--        <button routerLink="/user-details" (click)= "onClickNextButton()" class="next-btn" type=submit nz-button nzType="primary">Next</button>-->
+        <button routerLink="/user-details" [disabled]="!fatcaStatus.valid" class="next-btn" type=submit nz-button nzType="primary">Next</button>
+
+      </div>
+    </form>
+  </div>
+</div>
+

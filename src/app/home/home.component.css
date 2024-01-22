@@ -1,0 +1,55 @@
+
+.open-account-btn{
+  background-color:  #D5E0E8;
+  padding: 10px 20px;
+  font-family: 'sans-serif';
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-bottom:10px;
+  width:300px;
+  height:80px;
+}
+
+.login-btn{
+  background-color: #000C1F;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  font-family: 'sans-serif';
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+  width:300px;
+  height:80px;
+}
+
+.body{
+  /*background-color: lightgrey;*/
+  padding: 100px;
+  /*border: 1px solid red;*/
+
+}
+
+.form-container{
+  width: 500px;
+  height:250px;
+  /*background-color: lightblue;*/
+  /*border: none;*/
+  border-radius: 10px;
+  padding: 20px;
+  margin: auto;
+  border: 2px solid black;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+
+  /*border: 1px solid red;*/
+
+}

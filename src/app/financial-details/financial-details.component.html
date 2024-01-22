@@ -1,0 +1,33 @@
+
+<div class="body">
+  <div class="form-container">
+    <app-steps></app-steps>
+    <div class="title-container">
+      <p class="big-title">Financial Details</p>
+    </div>
+    <div class="input-field-group-container">
+<!--      <p>{{ ((form$| async) | json) }}</p>-->
+<!--      <p>{{ (form$ | async)?.email }}</p>-->
+
+
+      <h6>Email</h6>
+      <div>
+        <input  class="email-input-field-container" value=" {{ (form$ | async)?.email }}" [disabled]="true">
+      </div>
+      <br/>
+      <h4>Occupation Information</h4>
+      <hr/>
+      <h6>What is your current employment status</h6>
+      <div>
+        <nz-select [(ngModel)]="employementStatus">
+          <nz-option *ngFor="let c of employmentStatusData" [nzValue]="c" [nzLabel]="c"></nz-option>
+        </nz-select>
+      </div>
+
+      <div class="button-container">
+        <button routerLink="/review-application" type=submit class="next-btn" nz-button nzType="primary" (click)="onSubmit()">Next</button>
+      </div>
+
+    </div>
+  </div>
+</div>

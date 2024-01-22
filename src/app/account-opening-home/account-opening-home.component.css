@@ -1,0 +1,95 @@
+/*.outer-container{*/
+/*  border: 1px solid blue;*/
+/*  height: 100%;*/
+/*  width: 100%;*/
+/*  margin: 18px;*/
+
+
+/*}*/
+
+.body {
+  /*border: 1px solid blue;*/
+  margin: 0;
+  padding: 100px 300px;
+  /*background-color: lightblue;*/
+}
+
+.outer-container{
+  display: flex;
+  flex-direction: row;
+
+}
+
+.left-container{
+  width:100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 40px;
+  /*border: none;*/
+  border: 2px solid  #D5E0E8;
+  border-radius: 10px 0 0 10px;
+  background-color: #FFFFFF;
+  flex:3;
+}
+.right-container{
+  width:100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 40px;
+  border: none;
+  border-radius: 0 10px 10px 0;
+  background-color:  #D5E0E8;
+  flex:2;
+  text-align: center;
+}
+
+.right-container p{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.user-type-outer-container{
+  /*border:1px solid red;*/
+
+}
+
+.user-type-choice{
+  width: 300px;
+  height: 40px;
+  text-align: left;
+
+}
+
+.get-started-btn{
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  font-family: 'sans-serif';
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 300px;
+  height: 50px;
+}
+
+.get-started-btn-container{
+  margin-top: 20px;
+
+}
+
+
+.text-container{
+  display: flex;
+
+}
+
+.intro{
+  margin-left: 10px;
+  margin-top:0;
+}
+
+.icon-container{
+  margin-top:5px;
+}

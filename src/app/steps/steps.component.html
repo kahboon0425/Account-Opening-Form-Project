@@ -1,0 +1,6 @@
+
+<div>
+  <nz-select [(ngModel)]="selectedRegistrationSteps" (ngModelChange)="onSelect($event)">
+    <nz-option *ngFor="let p of registrationStepsData" [nzValue]="p.value" [nzLabel]="p.label"></nz-option>
+  </nz-select>
+</div>

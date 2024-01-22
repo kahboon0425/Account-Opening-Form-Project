@@ -1,0 +1,143 @@
+<div class="body">
+  <div class="form-container">
+    <div class="title-container">
+      <p class="big-title">Create your login for now and future</p>
+      <p class="small-title">So we can auto-save along your application, and you can continue with the login anytime.
+        This
+        is also the login for your future online banking.
+      </p>
+    </div>
+    <div class="input-field-group-container">
+      <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" [ngxsForm]="NGXS_FORM_NAME">
+        <div class="form-group input-field-container">
+          <div class="show-verify-email-container">
+            <input [class.is-invalid]="email.invalid && email.touched" formControlName="email"
+                   class="form-control inputField" type="email" name="EmailAddress" placeholder="Email Address" [(ngModel)]="userEmail">
+            <div class="verified-text-outer-container" *ngIf="email.valid"><a class="verified-text" (click)="showModal()">Verify</a></div>
+          </div>
+
+          <!--          Hide the username is it is valid or the username has not been touched yet-->
+          <!--        <small [class.d-none]="registrationForm.controls.email.valid||registrationForm.controls.email.untouched" class="text-danger">Email is required field</small><br/>-->
+
+          <div *ngIf="email.invalid && email.touched">
+            <small *ngIf="email.errors?.required" class="text-danger">Email is required field</small>
+            <small *ngIf="email.errors?.email" class="text-danger">Please enter a valid email</small>
+          </div>
+
+        </div>
+
+        <div class="form-group input-field-container">
+          <input [class.is-invalid]="username.invalid && username.touched" formControlName="username"
+                 class="form-control inputField" type="text" name="Username" placeholder="Login Name">
+          <div *ngIf="username.dirty">
+            <small class="text-danger">Please make sure the requirement below has been fulfilled</small>
+          </div>
+          <div *ngIf="username.invalid && username.touched">
+            <small *ngIf="username.errors?.required" class="text-danger">Username is a required field</small><br/>
+          </div>
+
+          <div>
+          <span [ngClass]="{'text-success': username?.value?.match('.{8,}')}" nz-icon nzType="check-circle"
+                nzTheme="fill"></span><small class="input-requirement">Minimum 8 characters</small><br/>
+          </div>
+
+          <span [ngClass]="{'text-success': username?.value?.match('^[a-zA-Z0-9 ]+$')}" nz-icon nzType="check-circle"
+                nzTheme="fill"></span><small class="input-requirement">Login name must contain alphabet value and
+          combination of alphanumeric value
+          only</small><br/>
+        </div>
+
+        <div class="form-group input-eld-container">
+          <input [class.is-invalid]="password.invalid && password.touched" formControlName="password"
+                 class="form-control inputField" type="password" name="Password" placeholder="Password">
+          <div *ngIf="password.dirty" >
+            <small class="text-danger">Please make sure the format of the password follows the requirement below</small>
+          </div>
+          <div *ngIf="password.invalid && password.touched">
+            <small *ngIf="username.errors?.required" class="text-danger">Password is a required field</small>
+          </div>
+
+          <div>
+            <!--          <span nz-icon nzType="check-circle" nzTheme="fill"></span><small class="input-requirement">Password must not contain sequential characters from username</small><br/>-->
+            <span [ngClass]="{'text-success': password?.value?.match('.{8,}')}" nz-icon nzType="check-circle"
+                  nzTheme="fill"></span><small class="input-requirement">Minimum 8 characters</small><br/>
+            <span [ngClass]="{'text-success': password?.value?.match('(.*[0-9].*)')}" nz-icon nzType="check-circle"
+                  nzTheme="fill"></span><small class="input-requirement">One number</small><br/>
+            <span [ngClass]="{'text-success': password?.value?.match('(?=.*[!@#$%^&*])')}" nz-icon nzType="check-circle"
+                  nzTheme="fill"></span><small class="input-requirement">One special character</small><br/>
+            <span [ngClass]="{'text-success': password?.value?.match('^(?=.*[A-Z])')}" nz-icon nzType="check-circle"
+                  nzTheme="fill"></span><small class="input-requirement">One upper case</small><br/>
+            <span [ngClass]="{'text-success': password?.value?.match('^(?=.*[a-z])')}" nz-icon nzType="check-circle"
+                  nzTheme="fill"></span><small class="input-requirement">One lower case</small>
+          </div>
+        </div>
+
+        <div class="form-group input-field-container">
+          <input [class.is-invalid]="confirmPassword.invalid && confirmPassword.touched" formControlName="confirmPassword"
+                 class="form-control inputField" type="password" name="confirmPassword" placeholder="Re-Enter Password">
+          <div *ngIf="confirmPassword.invalid && confirmPassword.touched">
+            <small *ngIf="confirmPassword.errors?.required" class="text-danger">Please enter your password again</small>
+          </div>
+          <div *ngIf="confirmPassword.dirty">
+            <small *ngIf="registrationForm.errors?.misMatch" class="text-danger">Please make sure your password
+              match</small>
+          </div>
+        </div>
+        <div class="button-container">
+          <button routerLink="/employee-or-business-partner" class="back-btn" nz-button nzType="primary">Back</button>
+          <!--        <button routerLink="/user-details" (click)= "onClickNextButton()" class="next-btn" type=submit nz-button nzType="primary">Next</button>-->
+          <button routerLink="/fatca-status" (click)= "onClickNextButton()" [disabled]="!registrationForm.valid" class="next-btn" type=submit nz-button nzType="primary">Next</button>
+
+        </div>
+      </form>
+
+      <!--    <div *ngFor="let i of registeredUser">-->
+      <!--      <li>{{ i }}</li>-->
+      <!--    </div>-->
+
+      <nz-modal
+        [(nzVisible)]="isVisible"
+        [nzTitle]="modalTitle"
+        [nzContent]="modalContent"
+        [nzFooter]="modalFooter"
+        (nzOnCancel)="handleCancel()"
+        (nzOnOk)="handleOk()"
+      >
+        <ng-template #modalTitle>Verify your Email Address</ng-template>
+
+        <ng-template #modalContent>
+          <div>
+            <p class="OTP-big-title">A 6-digit One Time Password (OTP) will be sent via email to <b>{{userEmail}}</b></p>
+            <p class="OTP-small-title">Enter the OTP below to verify your email.</p>
+          </div>
+
+          <div class="container">
+            <div class="row OTP-group">
+              LO7f6 -
+              <input [(ngModel)]="otp1" class="OTP-input-field" type="text" #OTP1 maxlength="1" (keyup)="move($event, '', OTP1, OTP2)">
+              <input [(ngModel)]="otp2" class="OTP-input-field" type="text" #OTP2 maxlength="1" (keyup)="move($event, OTP1, OTP2, OTP3)">
+              <input [(ngModel)]="otp3" class="OTP-input-field" type="text" #OTP3 maxlength="1" (keyup)="move($event, OTP2, OTP3, OTP4)">
+              <input [(ngModel)]="otp4" class="OTP-input-field" type="text" #OTP4 maxlength="1" (keyup)="move($event, OTP3, OTP4, OTP5)">
+              <input [(ngModel)]="otp5" class="OTP-input-field" type="text" #OTP5 maxlength="1" (keyup)="move($event, OTP4, OTP5, OTP6)">
+              <input [(ngModel)]="otp6" class="OTP-input-field" type="text" #OTP6 maxlength="1" (keyup)="move($event, OTP5, OTP6, '')">
+              <!--            {{OTP}}-->
+
+            </div>
+            <p class="wrongOTP">{{wrongOTP}}</p>
+            <p class="resend-OTP">The OTP will be valid for 10 minutes.<a> Resend OTP</a></p>
+          </div>
+        </ng-template>
+
+        <ng-template #modalFooter>
+          <button nz-button nzType="default" (click)="handleCancel()">Cancel</button>
+          <button nz-button nzType="primary" (click)="handleOk()">Submit</button>
+        </ng-template>
+      </nz-modal>
+
+      <!--    {{registrationForm.value | json}}-->
+    </div>
+
+  </div>
+
+</div>
+

@@ -1,0 +1,29 @@
+.menu-bar{
+  float: right;
+  border: 1px solid red;
+
+}
+.open-account-btn{
+  background-color: #00e0cb;
+  padding: 10px 20px;
+  font-family: 'sans-serif';
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.login-btn{
+  background-color: #000C1F;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  font-family: 'sans-serif';
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
