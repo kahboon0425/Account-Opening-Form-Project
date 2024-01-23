@@ -6,13 +6,11 @@
       <p class="big-title">Financial Details</p>
     </div>
     <div class="input-field-group-container">
-<!--      <p>{{ ((form$| async) | json) }}</p>-->
-<!--      <p>{{ (form$ | async)?.email }}</p>-->
 
 
       <h6>Email</h6>
       <div>
-        <input  class="email-input-field-container" value=" {{ (form$ | async)?.email }}" [disabled]="true">
+        <input  class="email-input-field-container" value=" {{ loginForm.email }}" [disabled]="true">
       </div>
       <br/>
       <h4>Occupation Information</h4>

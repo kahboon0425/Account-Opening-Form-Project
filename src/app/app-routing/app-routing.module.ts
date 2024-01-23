@@ -37,4 +37,4 @@ export class AppRoutingModule {
 }
 
 export const routingComponents = [HomeComponent, AccountOpeningHomeComponent,
-  NewOrOldClientComponent, EmployeeOrBusinessPartnerComponent, CreateLoginComponent, UserDetailsComponent, FinancialDetailsComponent, ReviewApplicationComponent, PageNotFoundComponent]
+  NewOrOldClientComponent, EmployeeOrBusinessPartnerComponent, CreateLoginComponent, UserDetailsComponent, FinancialDetailsComponent, ReviewApplicationComponent, PageNotFoundComponent,  FatcaStatusComponent]

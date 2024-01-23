@@ -36,35 +36,44 @@ export class ReviewApplicationComponent implements OnInit {
   }
 
 
-  @Select(AccountOpeningState.getMessage)
-    // @ts-ignore
-  message$: Observable<String>;
-  // @ts-ignore
-  messageSubscription: Subscription;
-  // @ts-ignore
-  messagePassIn: String;
-
-  // @ts-ignore
-  @Select(AccountOpeningState.getPersonalDetails) form$: Observable<PersonalDetailsModel>;
-
-  // @ts-ignore
-  @Select(AccountOpeningState.getLoginDetails) loginForm$: Observable<LoginDetailsModel>;
-
-  // @ts-ignore
-  @Select(AccountOpeningState.getFatcaStatus) fatcaStatus$: Observable<FatcaStatusModel>;
+  // // @ts-ignore
+  // @Select(AccountOpeningState.getPersonalDetails) form$: Observable<PersonalDetailsModel>;
+  //
+  // // @ts-ignore
+  // @Select(AccountOpeningState.getLoginDetails) loginForm$: Observable<LoginDetailsModel>;
+  //
+  // // @ts-ignore
+  // @Select(AccountOpeningState.getFatcaStatus) fatcaStatus$: Observable<FatcaStatusModel>;
 
 
 
   employmentStatus = '';
+  personalDetailsForm: PersonalDetailsModel = {};
+  loginForm: LoginDetailsModel = {};
+  fatcaStatusForm: FatcaStatusModel = {};
 
   id: string = RegistrationSteps.REVIEW_APPLICATION;
   ngOnInit(): void {
-    this.messageSubscription = this.message$
-      .pipe(
-        tap(value => {this.messagePassIn = <String>value})
-      ).subscribe();
+    // @ts-ignore
+    this.store.select(AccountOpeningState.getPersonalDetails).subscribe(
+      value => {
+        this.personalDetailsForm = value
+      }
+    )
+    // @ts-ignore
+    this.store.select(AccountOpeningState.getLoginDetails).subscribe(
+      value => {
+        this.loginForm= value
+      }
+    )
+    // @ts-ignore
+    this.store.select(AccountOpeningState.getFatcaStatus).subscribe(
+      value => {
+        this.fatcaStatusForm = value
+      }
+    )
 
-
+    // @ts-ignore
     this.store.select(AccountOpeningState.getFinancialStatus).subscribe(
       value => {
         this.employmentStatus = value
@@ -74,8 +83,6 @@ export class ReviewApplicationComponent implements OnInit {
     this.store.dispatch(new AccountOpeningAction.StoreRegistrationSteps(this.id));
 
   }
-  ngOnDestroy(): void {
-    this.messageSubscription.unsubscribe();
-  }
+
 
 }

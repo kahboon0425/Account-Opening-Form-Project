@@ -15,7 +15,7 @@
 
       <h5>Contact Information</h5>
       <div class="form-group">
-        <input class="form-control email-input-field-container" value=" {{ (form$ | async)?.email }}" [disabled]="true">
+        <input class="form-control email-input-field-container" value=" {{ loginForm.email }}" [disabled]="true">
       </div>
 
       <form [formGroup]="personalDetails" (ngSubmit)="onSubmit()" [ngxsForm]="NGXS_FORM_NAME">

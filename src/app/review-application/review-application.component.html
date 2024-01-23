@@ -1,12 +1,3 @@
-<!--<div>-->
-<!--  <p>{{ ((form$| async) | json) }}</p>-->
-<!--  <p>{{ (form$ | async)?.firstName }}</p>-->
-<!--  <p>{{ ((loginForm$| async) | json) }}</p>-->
-<!--  <p>{{ (loginForm$ | async)?.email }}</p>-->
-<!--</div>-->
-<!--  <p>{{ ((fatcaStatus$| async) | json) }}</p>-->
-<!--  <p>{{ (fatcaStatus$ | async)?.USBirthPlace }}</p>-->
-
 
 <div class="body">
   <div class="form-container">
@@ -21,21 +12,21 @@
         <div class="question-container">
           <p class="question">US citizenship/tax residency</p>
         </div>
-<!--        <input class="form-control inputField userInput" value="{{ (fatcaStatus$ | async)?.USCitizenship === 'true'?'yes' : 'no'}}">-->
-        <input class="form-control inputField userInput" value="{{ (fatcaStatus$ | async)?.USCitizenship }}">
+        <input class="form-control inputField userInput" value="{{ fatcaStatusForm.USCitizenship?'Yes' : 'No'}}" >
+<!--        <input class="form-control inputField userInput" value="{{ fatcaStatusForm.USCitizenship}}">-->
 
       </div>
       <div class="form-group input-field-container">
         <div class="question-container">
           <p class="question">US place of birth</p>
         </div>
-        <input class="form-control inputField userInput" value="{{ (fatcaStatus$ | async)?.USBirthPlace }}">
+        <input class="form-control inputField userInput" value="{{ fatcaStatusForm.USBirthPlace?'Yes' : 'No'}}">
       </div>
       <div class="form-group input-field-container">
         <div class="question-container">
           <p class="question">US telephone number</p>
         </div>
-        <input class="form-control inputField userInput" value="{{ (fatcaStatus$ | async)?.USPhoneNo }}">
+        <input class="form-control inputField userInput" value="{{ fatcaStatusForm.USPhoneNo?'Yes' : 'No'}}">
       </div>
       <br/>
       <br/>
@@ -46,13 +37,13 @@
         <div class="question-container">
           <p class="question">Phone Number</p>
         </div>
-        <input class="form-control inputField userInput" value="{{ (form$ | async)?.phoneNumber }}">
+        <input class="form-control inputField userInput" value="{{ personalDetailsForm.phoneNumber }}">
       </div>
       <div class="form-group input-field-container">
         <div class="question-container">
           <p class="question">Country Code</p>
         </div>
-        <input class="form-control inputField userInput" value="{{ (form$ | async)?.countryCode }}">
+        <input class="form-control inputField userInput" value="{{ personalDetailsForm.countryCode }}">
       </div>
       <br/>
       <br/>
@@ -63,31 +54,31 @@
         <div class="question-container">
           <p class="question">First Name</p>
         </div>
-        <input class="form-control inputField userInput" value="{{ (form$ | async)?.firstName }}">
+        <input class="form-control inputField userInput" value="{{ personalDetailsForm.firstName}}">
       </div>
       <div class="form-group input-field-container">
         <div class="question-container">
           <p class="question">Last Name</p>
         </div>
-        <input class="form-control inputField userInput" value="{{ (form$ | async)?.lastName }}">
+        <input class="form-control inputField userInput" value="{{ personalDetailsForm.lastName}}">
       </div>
       <div class="form-group input-field-container">
         <div class="question-container">
           <p class="question">Gender</p>
         </div>
-        <input class="form-control inputField userInput" value="{{ (form$ | async)?.gender }}">
+        <input class="form-control inputField userInput" value="{{ personalDetailsForm.gender }}">
       </div>
       <div class="form-group input-field-container">
         <div class="question-container">
           <p class="question">Nationality</p>
         </div>
-        <input class="form-control inputField userInput" value="{{ (form$ | async)?.nationality }}">
+        <input class="form-control inputField userInput" value="{{ personalDetailsForm.nationality}}">
       </div>
       <div class="form-group input-field-container">
         <div class="question-container">
           <p class="question">Date Of Birth</p>
         </div>
-        <input class="form-control inputField userInput" value="{{ ((form$ | async)?.dateOfBirth) | date}}">
+        <input class="form-control inputField userInput" value="{{ personalDetailsForm.dateOfBirth | date}}">
       </div>
       <br/>
       <br/>

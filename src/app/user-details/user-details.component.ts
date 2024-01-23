@@ -55,32 +55,23 @@ export class UserDetailsComponent implements OnInit {
     console.log(this.personalDetails.value);
   }
 
-  @Select(AccountOpeningState.getMessage)
-    // @ts-ignore
-  message$: Observable<String>;
-  // @ts-ignore
-  messageSubscription: Subscription;
-  // @ts-ignore
-  messagePassIn: String;
 
   // @ts-ignore
-  @Select(AccountOpeningState.getLoginDetails) form$: Observable<LoginDetailsModel>;
+  // @Select(AccountOpeningState.getLoginDetails) form$: Observable<LoginDetailsModel>;
 
   id: string = RegistrationSteps.PERSONAL_DETAILS;
 
-
+  loginForm: LoginDetailsModel = {};
 
   ngOnInit(): void {
-    this.messageSubscription = this.message$
-      .pipe(
-        tap(value => {this.messagePassIn = <String>value})
-      ).subscribe();
-
+    this.store.select(AccountOpeningState.getLoginDetails).subscribe(
+      value => {
+        this.loginForm= value
+      }
+    )
     this.store.dispatch(new AccountOpeningAction.StoreRegistrationSteps(this.id));
   }
-  ngOnDestroy(): void {
-    this.messageSubscription.unsubscribe();
-  }
+
 
 
   selectedCountryCode = 'Malaysia (+60)';

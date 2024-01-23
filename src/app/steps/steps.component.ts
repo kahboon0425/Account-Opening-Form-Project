@@ -30,6 +30,10 @@ export class StepsComponent implements OnInit {
 
   registrationStepsData = [
     {
+      value: this.registrationSteps.FATCA_STATUS,
+      label: 'Fatca Status'
+    },
+    {
       value: this.registrationSteps.PERSONAL_DETAILS,
       label: 'Personal Details'
     },
@@ -41,10 +45,7 @@ export class StepsComponent implements OnInit {
       value: this.registrationSteps.REVIEW_APPLICATION,
       label: 'Review Application'
     },
-    {
-      value: this.registrationSteps.FATCA_STATUS,
-      label: 'Fatca Status'
-    },
+
   ];
 
 

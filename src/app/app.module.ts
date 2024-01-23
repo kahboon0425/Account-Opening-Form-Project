@@ -30,7 +30,6 @@ import {NzRadioModule} from "ng-zorro-antd/radio";
 import {NzDatePickerModule} from "ng-zorro-antd/date-picker";
 import {NzSpaceModule} from "ng-zorro-antd/space";
 import {NzSwitchModule} from "ng-zorro-antd/switch";
-import {FatcaStatusComponent} from "./fatca-status/fatca-status.component";
 
 registerLocaleData(ms);
 
@@ -40,7 +39,6 @@ registerLocaleData(ms);
     AppComponent,
     routingComponents,
     StepsComponent,
-    FatcaStatusComponent,
   ],
   imports: [
     BrowserModule,
